@@ -24,7 +24,7 @@
 
 <div style="margin-top: -20px;" class="container">
   <div align="right">
-    <button (click)="changeQuote()" [ngClass]="'italic-text2'" style="background-color: #ffffff00; border: 0px; margin-top: 25px; 
+    <button (click)="changeQuote()" [ngClass]="'italic-text2'" style="background-color: #ffffff00; border: 0px; margin-top: 25px;
               margin-right: -80px; opacity: 0.8;">CUSTOMIZE QUOTE</button>
   </div>
   <!-- tagline for the page -->
@@ -39,7 +39,7 @@
           placeholder="Search for a recipe..." required [(ngModel)]="searchInput" />
       </div>
       <div align="center">
-        <div *ngIf="search.invalid && (search.dirty || search.touched)" style="margin-top: 18px; 
+        <div *ngIf="search.invalid && (search.dirty || search.touched)" style="margin-top: 18px;
           font-size: 18px; background-color: white; color: #dd5565; width: 400px; border-radius: 15px;">
           Please type something in the search box.
         </div>
@@ -52,6 +52,31 @@
           style="margin-left: 20px;">Recommend a Dish</button>
       </div>
     </form>
+
+  </div>
+  <form #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm.value)">
+   <div class="form-group">
+     <label>Name: </label>
+     <input type="text" class="form-control" name="name"
+            required
+            #name="ngModel"
+            [class.is-invalid]="name.invalid && name.touched"
+            [(ngModel)]="orderModel.name">
+     <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is requried</small>
+   </div>
+
+   <button class="btn btn-primary"
+           (click)="confirmOrder(orderForm.value)"
+           title="always enabled">Place order</button>
+   &nbsp;&nbsp;&nbsp;&nbsp;
+ </form>
+
+ <hr/>
+   <font color="white" style="font-style:italic">
+     <!-- If confirm_msg is not empty, display confirm message, otherwise, display default text -->
+     {{ (confirm_msg.length > 0)? confirm_msg : '' }}</font> <br/>
+
+ <hr/>
 
 
 
