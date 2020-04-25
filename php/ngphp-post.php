@@ -1,6 +1,7 @@
 
 <?php
 // session_start();
+include '../dbConnection.inc.php'
 
 header('Access-Control-Allow-Origin: http://localhost:4200');
 // header('Access-Control-Allow-Origin: *');
@@ -21,14 +22,27 @@ $postdata = file_get_contents("php://input");
 // Extract json format to PHP array
 $request = json_decode($postdata);
 
-$data = [];
-$data[0]['length'] = $content_length;
-foreach ($request as $k => $v)
-{
-  $data[0]['post_'.$k] = $v;
-}
+
+  // try{
+    $query = 'INSERT INTO posts(webRating) VALUES ('$request')';
+    // add SQL statement into the database
+    // if ($conn->query($query) === TRUE) {
+    //
+    // } else {
+    //   echo "Please type an integer for the Rating and try again";
+    // }
+
+
+// $data = [];
+// $data[0]['length'] = $content_length;
+// foreach ($request as $k => $v)
+// {
+//   $data[0]['post_'.$k] = $v;
+// }
 // sql statements here
 // Send response (in json format) back the front end
+
+
 echo json_encode(['content'=>$data]);
 //echo s retrieve sql code
 ?>

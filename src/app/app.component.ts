@@ -53,9 +53,10 @@ export class AppComponent {
 
   // Let's create a property to store a response from the back end
   // and try binding it back to the view
-  responsedata = new Order('', '', null, '', '', null);
+  responsedata = new Order('');
   searchInput = "";
 
+  orderModel = new Order('');
 
 
   confirm_msg = '';
@@ -63,8 +64,8 @@ export class AppComponent {
 
   confirmOrder(data) {
      console.log(data);
-     this.confirm_msg = 'Thank you, ' + data.name + '(' + data.name.length + ')';
-     this.confirm_msg += '. You ordered ' + data.drink_option;
+     this.confirm_msg = 'Thank you, your message ' + data.name + 'has been recorded!';
+
   }
 
 
