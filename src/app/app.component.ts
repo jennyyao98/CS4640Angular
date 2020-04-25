@@ -12,12 +12,24 @@ export class AppComponent {
   title:string = 'Reciplz';
   quote:string = '"One cannot think well, love well, sleep well, if one has not dined well."';
   changed:boolean = false;
+  suggestion:string = '';
+  suggestions:string[] = ['Salmon', 'Fried Rice', 'Carbonara'];
+
+  changeSuggestion() {
+    if (this.changed == false) {
+      this.suggestion = 'Up for some fresh salmon from the sea?';
+      this.changed = true;
+    } else {
+      this.suggestion = 'Go east and make some amazing fried rice!';
+      this.changed = false;
+    }
+  }
 
   changeQuote(){
     if(this.changed==false){
       this.quote = '"Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious."';
       this.changed = true;
-  }
+    }
     else{
       this.quote = '"One cannot think well, love well, sleep well, if one has not dined well."';
       this.changed =false;
@@ -26,7 +38,7 @@ export class AppComponent {
 
 // create a function when the form submit on Click - redirect
   func(){
-    window.location.href = "http://localhost/angularinclass12/search_results.php?submit=submited&search="+this.searchInput;
+    window.location.href = "http://localhost/Github/CS4640Angular/search_results.php?submit=submited&search="+this.searchInput;
 
   }
   checkVal(){

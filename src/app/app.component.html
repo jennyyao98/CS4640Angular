@@ -1,49 +1,60 @@
 <!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
-    <header>
-      <!-- navigation bar on the top left -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-            <a class="navbar-brand" href="#">{{title}}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/angularinclass12/profile.php">Profile</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="logout.php">Logout</a>
-                </li>
-              </ul>
-            </div>
-        </nav>
-    </header>
-
-    <div class="container">
-      <!-- tagline for the page -->
-      <div class="quote">
-        <h3 [ngStyle]="{'color': 'blue', 'font-size': '24px', 'font-weight': 'bold'}">{{ quote }}</h3>
-      </div>
-      <!-- search box: send post info to search_results.php -->
-      <form name="myForm">
-        <div class="form-group">
-          <input type="text" class="form-control" id="search" name="search" #search="ngModel" placeholder="Search for a recipe..." required [(ngModel)]="searchInput"/>
-        </div>
-
-        <!--submit button -->
-        <div class="buttons">
-          <button (click)="func()" type="button" class="btn btn-primary btn-lg" name="submit" id="searchBtn" [disabled]="search.invalid && (search.dirty || search.touched)">Search</button>
-          <button (click)="changeQuote()" >Click here to change the quote</button>
-        </div>
-      </form>
-
-      <div  *ngIf="search.invalid && (search.dirty || search.touched)" class="alert alert-danger">
-            Please type something in the search box!
-      </div>
-
-
-
+<header>
+  <!-- navigation bar on the top left -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <a class="navbar-brand" href="#">{{title}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost/Github/CS4640Angular/profile.php">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Logout</a>
+        </li>
+      </ul>
     </div>
+  </nav>
+</header>
+
+<div style="margin-top: -20px;" class="container">
+  <div align="right">
+    <button (click)="changeQuote()" [ngClass]="'italic-text2'" style="background-color: #ffffff00; border: 0px; margin-top: 25px; 
+              margin-right: -80px; opacity: 0.8;">CUSTOMIZE QUOTE</button>
+  </div>
+  <!-- tagline for the page -->
+  <div style="margin-top: 160px;" class="quote">
+    <h3 [ngStyle]="{'color': 'white', 'font-size': '24px', 'font-weight': 'bold'}">{{ quote }}</h3>
+    <p [ngStyle]="{'font-size': '18px', 'font-weight': 'bold', 'opacity': '0.8', 'margin-bottom': '25px'}">
+      {{suggestion}}</p>
+    <!-- search box: send post info to search_results.php -->
+    <form name="myForm">
+      <div class="form-group">
+        <input type="text" class="form-control" id="search" name="search" #search="ngModel"
+          placeholder="Search for a recipe..." required [(ngModel)]="searchInput" />
+      </div>
+      <div align="center">
+        <div *ngIf="search.invalid && (search.dirty || search.touched)" style="margin-top: 18px; 
+          font-size: 18px; background-color: white; color: #dd5565; width: 400px; border-radius: 15px;">
+          Please type something in the search box.
+        </div>
+    </div>
+
+      <!--submit button -->
+      <div align="center" class="buttons">
+        <button (click)="func()" type="submit" class="btn btn-primary btn-lg" name="submit" id="searchBtn">Search</button>
+        <button (click)="changeSuggestion()" [ngClass]="'italic-text'" class="btn btn-primary btn-lg"
+          style="margin-left: 20px;">Recommend a Dish</button>
+      </div>
+    </form>
+
+
+
+
+  </div>
