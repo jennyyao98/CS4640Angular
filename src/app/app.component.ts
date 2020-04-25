@@ -38,8 +38,7 @@ export class AppComponent {
 
 // create a function when the form submit on Click - redirect
   func(){
-    window.location.href = "http://localhost/Github/CS4640Angular/search_results.php?submit=submited&search="+this.searchInput;
-
+    window.location.href = "http://localhost/github/CS4640Angular/search_results.php?submit=submited&search="+this.searchInput;
   }
   checkVal(){
     return true;
