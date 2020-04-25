@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home Page</title>
+  <base href="/">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="authors" content="Jenny Yao, Selinie Wang, Helen Lin">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript">
+    /* function setFocus - sets the focus on the page to the search box when the home page is loaded*/
+    function setFocus() {
+      var searchItm = document.getElementById("search");
+      searchItm.focus();
+    }
+  </script>
+
+</head>
+<body onload="setFocus();">
+  <app-root></app-root>
+</body>
+</html>

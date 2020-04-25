@@ -1,0 +1,148 @@
+/* --- Helen Lin (hl5ec), Jenny Yao (jy7eq), Selinie Wang (jw6qe) --- */
+
+@media only screen and (min-device-width: 420px) {
+body{
+    /* --- Font--- */
+    font-family: 'Nunito', sans-serif;
+}
+/* ---Style for navbar--- */
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 0px;
+    font-family: 'Nunito', sans-serif;
+}
+
+a.nav-link:hover{
+    border-bottom: 3px solid #FF4258;
+}
+
+/* ---Style for search icon--- */
+.input-wrapper {
+    display:inline-block;
+    position: relative
+}
+
+.input-wrapper:before {
+    font-family: 'FontAwesome';
+    content: '\f002';
+    position: absolute;
+    font-size: 20px;
+    color: #838282  ;
+    margin-top: .3%;
+    left: 10px;
+}
+/* ---Style for search--- */
+#query{
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    overflow: hidden;
+    padding-left: 5%;
+    background-color: #E1E1E1;
+    height: 40px;
+}
+
+.search-icon{
+padding: 10px; 
+min-width: 40px;
+}
+
+#submit{
+border-radius: 28px;
+font-family: 'Nunito', sans-serif;
+color: #ffffff;
+font-size: 15px;
+background: #3498db;
+padding: 10px 20px 10px 20px;
+text-decoration: none;
+}
+
+#submit:hover{
+background: #3cb0fd;
+text-decoration: none;
+}
+
+.selectWrapper{
+border-radius:36px;
+display:inline-block;
+overflow:hidden;
+background:white;
+border:1px solid #cccccc;
+}
+.selectBox{
+width:120px;
+height:30px;
+border:0px;
+outline:none;
+}
+
+.profilebox {
+    width: 600px;
+    height: 300px;
+}
+
+/* ---Style for filters--- */
+.filter-form{
+    margin-top: 3%;
+}
+
+#inputState{
+    border-radius: 30px;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+img.social-image{
+    display: list-item;
+    height: 40px;
+    margin-right: 5%;
+    border-radius: 4px;
+    width: 40px;
+}
+
+.follow-button{
+    align-items: center;
+}
+
+.social-media{
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* ---Style for link of recipe--- */
+.recipe-link{
+    color: black;
+}
+
+.recipe-link:hover{
+    color: black;
+}
+
+.feedback{
+    font-style: italic;
+    color: #FF4258;
+    font-size: 12px;
+}
+}
+
+/* ---Style for smaller windows--- */
+@media (min-width: 582px){
+    .form-inline .form-group{
+    margin-top: 1%;
+    margin-left: 5%;
+    }
+}
+
+@media (max-width: 760px){
+#query{
+    width: 80%;
+    padding-left:8%;
+}
+}
+
+input::placeholder {
+    font-size: 13px;
+    color: #cbcbcb;
+  }
