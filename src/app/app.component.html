@@ -30,10 +30,16 @@
   <!-- tagline for the page -->
   <div style="margin-top: 160px;" class="quote">
     <h3 [ngStyle]="{'color': 'white', 'font-size': '24px', 'font-weight': 'bold'}">{{ quote }}</h3>
-    <p [ngStyle]="{'font-size': '18px', 'font-weight': 'bold', 'opacity': '0.8', 'margin-bottom': '25px'}">
-      {{suggestion}}</p>
+    <div align="center">
+    <p [ngStyle]="{'font-size': '18px', 'font-weight': 'bold', 'opacity': '0.8', 'width': '300px'}">Today's Recommendations: </p>
+    <div style="margin-top: -15px;">
+    <p [ngStyle]="{'font-size': '18px', 'opacity': '0.8', 'display': 'inline-block', 'width': '100px'}" 
+      *ngFor="let i of suggestions">{{ i.name }}</p>
+    </div>
+</div>
+  </div>
     <!-- search box: send post info to search_results.php -->
-    <form name="myForm">
+    <form style="margin-top: -30px" name="myForm">
       <div class="form-group">
         <input type="text" class="form-control" id="search" name="search" #search="ngModel"
           placeholder="Search for a recipe..." required [(ngModel)]="searchInput" />
@@ -48,8 +54,8 @@
       <!--submit button -->
       <div align="center" class="buttons">
         <button (click)="func()" type="submit" class="btn btn-primary btn-lg" name="submit" id="searchBtn">Search</button>
-        <button (click)="changeSuggestion()" [ngClass]="'italic-text'" class="btn btn-primary btn-lg"
-          style="margin-left: 20px;">Recommend a Dish</button>
+        <!--<button (click)="changeSuggestion()" [ngClass]="'italic-text'" class="btn btn-primary btn-lg"
+          style="margin-left: 20px;">Recommend a Dish</button>-->
       </div>
     </form>
 

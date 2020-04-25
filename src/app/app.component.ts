@@ -13,7 +13,12 @@ export class AppComponent {
   quote:string = '"One cannot think well, love well, sleep well, if one has not dined well."';
   changed:boolean = false;
   suggestion:string = '';
-  suggestions:string[] = ['Salmon', 'Fried Rice', 'Carbonara'];
+  suggestion2:string[] = ['Salmon', 'Fried Rice', 'Carbonara'];
+  suggestions = [
+    { name: 'Salmon', id: 1 },
+    { name: 'Fried Rice', id: 2 },
+    { name: 'Carbonara', id: 3 },
+ ];  
 
   changeSuggestion() {
     if (this.changed == false) {
