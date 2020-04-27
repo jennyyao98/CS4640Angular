@@ -82,7 +82,7 @@ export class AppComponent {
      // To send a GET request, use the concept of URL rewriting to pass data to the backend
      // this.http.get<Order>('http://localhost/cs4640/inclass11/ngphp-get.php?str='+params)
      // To send a POST request, pass data as an object
-     this.http.post<Order>('http://localhost/cs4640/inclass11/ngphp-post.php', params)
+     this.http.post<Order>('http://localhost/cs4640/CS4640Angular/ngphp-post.php', params)
      .subscribe((data) => {
           // Receive a response successfully, do something here
           // console.log('Response from backend ', data);

@@ -1,7 +1,7 @@
 
 <?php
 // session_start();
-include '../dbConnection.inc.php'
+include '../dbConnection.inc.php';
 
 header('Access-Control-Allow-Origin: http://localhost:4200');
 // header('Access-Control-Allow-Origin: *');
@@ -24,7 +24,7 @@ $request = json_decode($postdata);
 
 
   // try{
-    $query = 'INSERT INTO posts(webRating) VALUES ('$request')';
+    $query = 'INSERT INTO posts(webRating) VALUES ("' . $request . '")';
     // add SQL statement into the database
     // if ($conn->query($query) === TRUE) {
     //

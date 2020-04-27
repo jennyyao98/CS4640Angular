@@ -22,13 +22,13 @@
   </nav>
 </header>
 
-<div style="margin-top: -20px;" class="container">
+<div style="margin-top: -50px;" class="container">
   <div align="right">
-    <button (click)="changeQuote()" [ngClass]="'italic-text2'" style="background-color: #ffffff00; border: 0px; margin-top: 25px;
-              margin-right: -80px; opacity: 0.8;">CUSTOMIZE QUOTE</button>
+    <button (click)="changeQuote()" [ngClass]="'italic-text2'" style="background-color: #ffffff00; border: 0px; margin-top: 55px;
+              margin-right: -80px; opacity: 0.8;">CHANGE QUOTE</button>
   </div>
   <!-- tagline for the page -->
-  <div style="margin-top: 160px;" class="quote">
+  <div style="margin-top: 130px;" class="quote">
     <h3 [ngStyle]="{'color': 'white', 'font-size': '24px', 'font-weight': 'bold'}">{{ quote }}</h3>
     <div align="center">
     <p [ngStyle]="{'font-size': '18px', 'font-weight': 'bold', 'opacity': '0.8', 'width': '300px'}">Today's Recommendations: </p>
@@ -53,17 +53,15 @@
       <!--submit button -->
       <div align="center" class="buttons">
         <button (click)="func()" type="submit" class="btn btn-primary btn-lg" name="submit" id="searchBtn">Search</button>
-        <button (click)="changeSuggestion()" [ngClass]="'italic-text'" class="btn btn-primary btn-lg" style="margin-left: 20px;">Recommend a Dish</button>
       </div>
     </form>
 
   </div>
-    <hr />
-  <form #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm.value)">
-    <div class="form-group" style="float:center">
-      <label>Please take some time and give our website a rating! </label>
-      <input type="text" class="form-control-2" name="name" required #name="ngModel" placeholder="Enter a # 1-5" [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="orderModel.name">
-      <!-- <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is requried</small> -->
+
+  <form style="margin-top: 20px;" #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm.value)">
+    <div class="form-group" style="float:center" align="center">
+      <label style="color: white; padding-right: 20px;">Please take some time and give our website a rating! </label>
+      <input type="text" class="form-control-2" name="name" required #name="ngModel" placeholder="Enter 1 - 5" [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="orderModel.name">
       <button class="btn btn-primary" (click)="confirmOrder(orderForm.value)" title="always enabled">Enter Rating</button>
     </div>
     &nbsp;&nbsp;&nbsp;&nbsp;
