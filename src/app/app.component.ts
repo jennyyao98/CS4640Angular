@@ -18,7 +18,7 @@ export class AppComponent {
     { name: 'Salmon', id: 1 },
     { name: 'Fried Rice', id: 2 },
     { name: 'Carbonara', id: 3 },
- ];  
+ ];
 
   changeSuggestion() {
     if (this.changed == false) {
@@ -81,9 +81,11 @@ export class AppComponent {
      // this.http.get<Order>('http://localhost/cs4640/inclass11/ngphp-get.php?str='+params)
      // To send a POST request, pass data as an object
      this.http.post<Order>('http://localhost/Github/CS4640Angular/php/ngphp-post.php', params)
+
+     // console.log('hi');
      .subscribe((data) => {
           // Receive a response successfully, do something here
-          // console.log('Response from backend ', data);
+          console.log('Response from backend ', data);
           this.responsedata = data;     // assign response to responsedata property to bind to screen later
      }, (error) => {
           // An error occurs, handle an error in some way
