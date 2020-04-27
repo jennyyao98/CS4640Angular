@@ -33,7 +33,7 @@
     <div align="center">
     <p [ngStyle]="{'font-size': '18px', 'font-weight': 'bold', 'opacity': '0.8', 'width': '300px'}">Today's Recommendations: </p>
     <div style="margin-top: -15px;">
-    <p [ngStyle]="{'font-size': '18px', 'opacity': '0.8', 'display': 'inline-block', 'width': '100px'}" 
+    <p [ngStyle]="{'font-size': '18px', 'opacity': '0.8', 'display': 'inline-block', 'width': '100px'}"
       *ngFor="let i of suggestions">{{ i.name }}</p>
     </div>
 </div>
@@ -71,8 +71,3 @@
   <font color="white" style="font-style:italic">
     <!-- If confirm_msg is not empty, display confirm message, otherwise, display default text -->
     {{ (confirm_msg.length > 0)? confirm_msg : '' }}</font> <br />
-
-
-
-
-
