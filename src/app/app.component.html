@@ -9,26 +9,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://localhost/Github/CS4640Angular/index.html">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost/Github/CS4640Angular/profile.php">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="logout.php">Logout</a>
+          <a class="nav-link" href="http://localhost/Github/CS4640Angular/logout.php">Logout</a>
         </li>
       </ul>
     </div>
   </nav>
 </header>
 
-<div style="margin-top: -50px;" class="container">
+<div style="margin-top: -60px;" class="container">
   <div align="right">
-    <button (click)="changeQuote()" [ngClass]="'italic-text2'" style="background-color: #ffffff00; border: 0px; margin-top: 55px;
+    <button (click)="changeQuote()" [ngClass]="'italic-text2'" style="background-color: #ffffff00; border: 0px; margin-top: 65px;
               margin-right: -80px; opacity: 0.8;">CHANGE QUOTE</button>
   </div>
   <!-- tagline for the page -->
-  <div style="margin-top: 130px;" class="quote">
+  <div style="margin-top: 100px;" class="quote">
     <h3 [ngStyle]="{'color': 'white', 'font-size': '24px', 'font-weight': 'bold'}">{{ quote }}</h3>
     <div align="center">
     <p [ngStyle]="{'font-size': '18px', 'font-weight': 'bold', 'opacity': '0.8', 'width': '300px'}">Today's Recommendations: </p>
