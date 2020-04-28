@@ -58,8 +58,7 @@ export class AppComponent {
      this.confirm_msg = 'Thank you, your rating of ' + data.name + ' has been recorded!';
   }
 
-  // Assume we want to send a request to the backend when the form is submitted
-  // so we add code to send a request in this function
+  // onSubmit - submit the info (rating) to ngphp - post using a post method
 
   onSubmit(form: any): void {
      console.log('You submitted value: ', form);
@@ -68,12 +67,9 @@ export class AppComponent {
      // Convert the form data to json format
      let params = JSON.stringify(form);
 
-     // To send a GET request, use the concept of URL rewriting to pass data to the backend
-     // this.http.get<Order>('http://localhost/cs4640/inclass11/ngphp-get.php?str='+params)
      // To send a POST request, pass data as an object
      this.http.post<Order>('http://localhost/Github/CS4640Angular/php/ngphp-post.php', params)
 
-     // console.log('hi');
      .subscribe((data) => {
           // Receive a response successfully, do something here
           console.log('Response from backend ', data);
