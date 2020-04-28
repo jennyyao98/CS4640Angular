@@ -20,7 +20,8 @@ $postdata = file_get_contents("php://input");
 
 // Extract json format to PHP array
 $request = json_decode($postdata);
-// $data = [];
+$rating = (int)$request->{'name'};// $data = [];
+
 // $data[0]['length'] = $content_length;
 // foreach ($request as $k => $v)
 // {
@@ -37,31 +38,36 @@ $dbname = "Reciplz";
 $conn = mysqli_connect($server, $username, $password, $dbname);
 
 // echo json_encode(['content'=>$request]);
-
-// try{
-// $query = "INSERT INTO posts(postId, webRating) VALUES ('2',' . $request . ')";
-$query = "INSERT INTO posts (webRating) VALUES ('. $request[0] .')";
-
-// $conn->query($query);
-// echo "hi";
-// add SQL statement into the database
-if ($conn->query($query) === TRUE) {
-// if (1==1) {
-  // code...
-  // echo json_encode(['content'=>"success"]);
-  echo json_encode(['content'=>$request]);
-  // echo ;
-} else {
-  // echo json_encode(['content'=>"failed"]);
-  echo json_encode(['content'=>$request]);
-}
-
+// $content_length = (int) $_SERVER['CONTENT_LENGTH'];
 // $data = [];
 // $data[0]['length'] = $content_length;
 // foreach ($request as $k => $v)
 // {
-//   $data[0]['post_'.$k] = $v;
+  // $data[0] = $v;
 // }
+
+// echo json_encode(['content'=>$request['name']]);
+// try{
+// $query = "INSERT INTO posts(postId, webRating) VALUES ('2',' . $request . ')";
+// $query = "INSERT INTO posts (webRating) VALUES ('4')";
+$query = "INSERT INTO posts (webRating) VALUES ('$rating')";
+
+
+// $conn->query($query);
+// echo "hi";
+// add SQL statement into the database
+if ($conn->query($query) == TRUE) {
+// if (1==1) {
+  // code...
+  // echo json_encode(['content'=>"success"]);
+  echo json_encode(['content'=>'hi']);
+  // echo ;
+} else {
+  // echo json_encode(['content'=>"failed"]);
+  echo json_encode(['content'=>'failed']);
+}
+
+
 // sql statements here
 // Send response (in json format) back the front end
 
