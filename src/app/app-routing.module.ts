@@ -1,3 +1,4 @@
+// Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq)
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 

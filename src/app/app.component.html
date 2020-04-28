@@ -1,6 +1,6 @@
 <!-- Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq) -->
 <header>
-  <!-- navigation bar on the top left -->
+  <!-- navigation bar on the top left; one-way binding using string interpolation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
     <a class="navbar-brand" href="#">{{title}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#index.html">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://localhost:4200">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost/Github/CS4640Angular/profile.php">Profile</a>
@@ -22,14 +22,16 @@
   </nav>
 </header>
 
+<!-- customize quotes using ngClass -->
 <div style="margin-top: -60px;" class="container">
   <div align="right">
     <button (click)="changeQuote()" [ngClass]="'italic-text2'" style="background-color: #ffffff00; border: 0px; margin-top: 65px;
               margin-right: -80px; opacity: 0.8;">CHANGE QUOTE</button>
   </div>
-  <!-- tagline for the page -->
+  <!-- tagline using ngStyle; one-way binding using event-binding -->
   <div style="margin-top: 100px;" class="quote">
     <h3 [ngStyle]="{'color': 'white', 'font-size': '24px', 'font-weight': 'bold'}">{{ quote }}</h3>
+    <!-- recommendations using ngFor -->
     <div align="center">
     <p [ngStyle]="{'font-size': '18px', 'font-weight': 'bold', 'opacity': '0.8', 'width': '300px'}">Today's Recommendations: </p>
     <div style="margin-top: -15px;">
@@ -38,7 +40,7 @@
     </div>
 </div>
   </div>
-    <!-- search box: send post info to search_results.php -->
+    <!-- send post info to search_results.php using ngIf -->
     <form style="margin-top: -30px" name="myForm">
       <div class="form-group">
         <input type="text" class="form-control" id="search" name="search" #search="ngModel" placeholder="Search for a recipe..." required [(ngModel)]="searchInput" />
@@ -58,6 +60,7 @@
 
   </div>
 
+  <!-- Rating button for server side component -->
   <form style="margin-top: 20px;" #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm.value)">
     <div class="form-group" style="float:center" align="center">
       <label style="color: white; padding-right: 20px;">Please take some time and give our website a rating! </label>

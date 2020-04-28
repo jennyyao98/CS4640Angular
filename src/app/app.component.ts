@@ -1,3 +1,4 @@
+// Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq)
 import { Component } from '@angular/core';
 import { Order } from './order';
 
@@ -12,7 +13,6 @@ export class AppComponent {
   title:string = 'Reciplz';
   quote:string = '"One cannot think well, love well, sleep well, if one has not dined well."';
   changed:boolean = false;
-  suggestion:string = '';
   suggestion2:string[] = ['Salmon', 'Fried Rice', 'Carbonara'];
   suggestions = [
     { name: 'Salmon', id: 1 },
@@ -20,16 +20,7 @@ export class AppComponent {
     { name: 'Carbonara', id: 3 },
  ];
 
-  changeSuggestion() {
-    if (this.changed == false) {
-      this.suggestion = 'Up for some fresh salmon from the sea?';
-      this.changed = true;
-    } else {
-      this.suggestion = 'Go east and make some amazing fried rice!';
-      this.changed = false;
-    }
-  }
-
+// change the quote for customization
   changeQuote(){
     if(this.changed==false){
       this.quote = '"Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious."';

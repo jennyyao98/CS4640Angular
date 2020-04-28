@@ -1,3 +1,5 @@
+// Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq)
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';

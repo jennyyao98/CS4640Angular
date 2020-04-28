@@ -70,9 +70,6 @@ $conn->close();
                         <a class="nav-link" href="http://localhost:4200">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="profile.php">Profile<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">

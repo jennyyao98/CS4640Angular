@@ -1,3 +1,4 @@
+// Selinie Wang (jw6qe), Helen Lin (hl5ec), Jenny Yao (jy7eq)
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
