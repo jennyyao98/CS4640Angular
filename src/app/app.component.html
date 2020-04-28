@@ -62,7 +62,7 @@
 
   <!-- Rating button for server side component -->
   <form style="margin-top: 20px;" #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm.value)">
-    <div class="form-group" style="float:center" align="center">
+    <div class="form-group" style="float:center;" align="center">
       <label style="color: white; padding-right: 20px;">Please take some time and give our website a rating! </label>
       <input type="text" class="form-control-2" name="name" required #name="ngModel" placeholder="Enter 1 - 5" [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="orderModel.name">
       <button class="btn btn-primary" (click)="confirmOrder(orderForm.value)" title="always enabled">Enter Rating</button>
@@ -71,6 +71,9 @@
   </form>
 
 
-  <font color="white" style="font-style:italic">
+  <div align="center" style="margin-top: -20px;">
+  <font color="white" align="center" style="font-style:italic; font-weight: bold;">
     <!-- If confirm_msg is not empty, display confirm message, otherwise, display default text -->
     {{ (confirm_msg.length > 0)? confirm_msg : '' }}</font> <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
