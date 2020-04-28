@@ -64,10 +64,8 @@ export class AppComponent {
 
   confirmOrder(data) {
      console.log(data);
-     this.confirm_msg = 'Thank you, your message ' + data.name + 'has been recorded!';
-
+     this.confirm_msg = 'Thank you, your rating of ' + data.name + ' has been recorded!';
   }
-
 
   // Assume we want to send a request to the backend when the form is submitted
   // so we add code to send a request in this function
@@ -83,6 +81,7 @@ export class AppComponent {
      // this.http.get<Order>('http://localhost/cs4640/inclass11/ngphp-get.php?str='+params)
      // To send a POST request, pass data as an object
      this.http.post<Order>('http://localhost/Github/CS4640Angular/php/ngphp-post.php', params)
+
      // console.log('hi');
      .subscribe((data) => {
           // Receive a response successfully, do something here
